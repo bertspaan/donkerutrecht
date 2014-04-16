@@ -1,0 +1,23 @@
+---
+layout: map
+title: Home
+---
+
+  <div id="map"></div>
+  <script>
+    var map = L.map('map', {
+      zoomControl: false
+    });
+
+    L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+      minZoom: 4, maxZoom: 18
+    }).addTo(map);
+
+    map.setView([52.0940,5.1052], 13);
+
+    $.getJSON('data/photos.json', function(photos) {
+      L.geoJson(photos, {
+      }).addTo(map);
+    });
+
+  </script>

@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Open Sans';
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-color: rgb(41,125,207);
+}
+
+article {
+  position: absolute;
+  left: 240px;
+  top: 70px;
+  width: 800px;
+  bottom: 0;
+}
+
+header ul {
+  position: absolute;
+  left: 200px;
+  top: 12px;
+  list-style-type: none;
+}
+
+header li {
+  float: left;
+  padding: 0 10px;
+}
+
+header li a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+#logo {
+  width: 160px;
+  height: 160px;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1000;
+  background-color: white;
+  padding: 4px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+}
+
+#map {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  bottom: 0;
+}

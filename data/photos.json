@@ -1,0 +1,23 @@
+---
+---
+{
+  "type": "FeatureCollection",
+  "features": [
+    {% for post in site.posts %}
+    {
+      "type": "Feature",
+      "properties": {"title": "{{ post.titel | escape }}"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          {{ post.locatie.lon }},
+          {{ post.locatie.lat }}
+        ]
+      }
+    }
+    {% if forloop.last != true %}
+    ,
+    {% endif %}
+    {% endfor %}
+  ]
+}
