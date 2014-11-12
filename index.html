@@ -1,23 +1,45 @@
----
-layout: map
-title: Home
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Donker Utrecht</title>
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/d3.v3.min.js"></script>
+    <script src="/js/leaflet.js"></script>
+    <link rel="stylesheet" href="css/leaflet.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo">
+          <a href="./"><img alt="Donker Utrecht" src="img/donkerutrecht_small.png" alt="Donker Utrecht" /></a>
+        </div>
+        <ul>
+          <li><a href="#">Menu1</a></li>
+          <li><a href="#">Menu2</a></li>
+          <li><a href="#">Menu3</a></li>
+        </ul>
+      </nav>
+  	</header>
 
-  <div id="map"></div>
-  <script>
-    var map = L.map('map', {
-      zoomControl: false
-    });
+    <div id="map"></div>
+    <script>
+      var map = L.map('map', {
+        zoomControl: false
+      });
 
-    L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
-      minZoom: 4, maxZoom: 18
-    }).addTo(map);
-
-    map.setView([52.0940,5.1052], 13);
-
-    $.getJSON('data/photos.json', function(photos) {
-      L.geoJson(photos, {
+      L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+        minZoom: 4, maxZoom: 18
       }).addTo(map);
-    });
 
-  </script>
+      map.setView([52.0940,5.1052], 13);
+
+      d3.json('photos.json', function(json) {
+        L.geoJson(json, {
+        }).addTo(map);
+      });
+
+    </script>
+  </body>
+</html>
