@@ -22,14 +22,16 @@
         </ul>
       </nav>
   	</header>
-
     <div id="map"></div>
+    <div id="fog" />
     <script>
+    var tileUrl = "https://{s}.tiles.mapbox.com/v4/bertspaan.6dfc5007/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw";
+
       var map = L.map('map', {
         zoomControl: false
       });
 
-      L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+      L.tileLayer(tileUrl, {
         minZoom: 4, maxZoom: 18
       }).addTo(map);
 
@@ -40,6 +42,15 @@
         }).addTo(map);
       });
 
+      map.on('move', function() {
+        var style = d3.select("#map .leaflet-map-pane").attr("style");
+        var match = /\(([-\d]+)px, ([-\d]+)px/g.exec(style);
+        if (match && match.length == 3) {
+          var x = parseFloat(match[1]) * 0.6;
+          var y = parseFloat(match[2]) * 0.6;
+          d3.select("#fog").style("background-position", Math.round(x) + "px " + Math.round(y) + "px");
+        }
+      });
     </script>
   </body>
 </html>
