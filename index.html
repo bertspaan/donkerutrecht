@@ -4,53 +4,33 @@
     <title>Donker Utrecht</title>
     <meta charset="utf-8">
     <meta name="viewport"content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/d3.v3.min.js"></script>
-    <script src="js/leaflet.js"></script>
-    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <div id="logo">
-          <a href="./"><img alt="Donker Utrecht" src="img/donkerutrecht_small.png" alt="Donker Utrecht" /></a>
-        </div>
-        <ul>
-          <li><a href="#">Menu1</a></li>
-          <li><a href="#">Menu2</a></li>
-          <li><a href="#">Menu3</a></li>
-        </ul>
-      </nav>
   	</header>
     <div id="map"></div>
-    <div id="fog" />
     <script>
-    var tileUrl = "https://{s}.tiles.mapbox.com/v4/bertspaan.6dfc5007/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYmVydHNwYWFuIiwiYSI6ImR3dERiQk0ifQ.DLbScmbRohc3Sqv7prfhqw";
+      var tileUrl = 'http://localhost:8888/v2/donker-utrecht/{z}/{x}/{y}.png',
+          map = L.map('map', {
+            minZoom: 13,
+            maxZoom: 18
+          });
 
-      var map = L.map('map', {
-        zoomControl: false
-      });
-
-      L.tileLayer(tileUrl, {
-        minZoom: 4, maxZoom: 18
-      }).addTo(map);
-
-      map.setView([52.0940,5.1052], 13);
-
-      d3.json('photos.json', function(json) {
-        L.geoJson(json, {
-        }).addTo(map);
-      });
-
-      map.on('move', function() {
-        var style = d3.select("#map .leaflet-map-pane").attr("style");
-        var match = /\(([-\d]+)px, ([-\d]+)px/g.exec(style);
-        if (match && match.length == 3) {
-          var x = parseFloat(match[1]) * 0.6;
-          var y = parseFloat(match[2]) * 0.6;
-          d3.select("#fog").style("background-position", Math.round(x) + "px " + Math.round(y) + "px");
-        }
-      });
+      L.tileLayer(tileUrl).addTo(map);
+      map.setView([52.0965,5.1159], 13);
     </script>
   </body>
 </html>
