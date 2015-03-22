@@ -23,14 +23,14 @@
   	</header>
     <div id="map"></div>
     <script>
-      var tileUrl = 'http://localhost:8888/v2/donker-utrecht/{z}/{x}/{y}.png',
+      var tileUrl = 'http://tiles.donkerutrecht.nl.s3-eu-central-1.amazonaws.com/{z}/{x}/{y}.png',
           map = L.map('map', {
             minZoom: 13,
             maxZoom: 18
           });
 
       L.tileLayer(tileUrl).addTo(map);
-      map.setView([52.0965,5.1159], 13);
+      map.setView([52.0966,5.1097], 13);
     </script>
   </body>
 </html>
