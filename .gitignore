@@ -2,4 +2,5 @@ _site
 lantaarnpalen
 *.mbtiles
 node_modules
+tiles
 
