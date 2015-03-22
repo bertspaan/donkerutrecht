@@ -3,4 +3,5 @@ lantaarnpalen
 *.mbtiles
 node_modules
 tiles
+tilemill/layers
 
