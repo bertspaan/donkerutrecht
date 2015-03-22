@@ -10,76 +10,6 @@
 /* PLACE NAMES
 /* ================================================================== */
 
-#place::country[type='country'][zoom>3][zoom<9] {
-  text-name:'[name]';
-  text-face-name: @font_bold;
-  text-placement:point;
-  text-fill: @country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  [zoom=3] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
-  [zoom=4] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-  }
-  [zoom>4] {
-    text-halo-radius: 2;
-  }
-  [zoom=5] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }
-  [zoom=6] {
-    text-size:12 + @text_adjust;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }
-  [zoom=7] {
-    text-size:14 + @text_adjust;
-    text-character-spacing: 2;
-  }
-}
-
-#place::state[type='state'][zoom>=5][zoom<=10] {
-  text-name:'[name]';
-  text-face-name:@font_bold_italic;
-  text-placement:point;
-  text-fill:@state_text;
-  text-halo-fill: @state_halo;
-  text-halo-radius: 1;
-  [zoom=6] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
-  [zoom=7] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-  }
-  [zoom>8] {
-    text-halo-radius: 2;
-  }
-  [zoom=8] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }
-  [zoom=9] {
-    text-size:12 + @text_adjust;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }
-  [zoom=10] {
-    text-size:14 + @text_adjust;
-    text-character-spacing: 2;
-  }
-}
-
 /* ---- Cities ------------------------------------------------------ */
 
 #place::city[type='city'][zoom>=8][zoom<=15] {
@@ -181,9 +111,9 @@
 /* ---- Other small places ------------------------------------------ */
 
 #place::small[type='village'][zoom>=13],
-#place::small[type='suburb'][zoom>=13],
-#place::small[type='hamlet'][zoom>=13],
-#place::small[type='neighbourhood'][zoom>=13] {
+#place::small[type='suburb'][zoom>=14],
+#place::small[type='hamlet'][zoom>=14],
+#place::small[type='neighbourhood'][zoom>=15] {  
   text-name:'[name]';
   text-face-name:@font;
   text-placement:point;
@@ -254,7 +184,7 @@
 // =====================================================================
 // AREA LABELS
 // =====================================================================
-
+/*
 #area_label {
   // Bring in labels gradually as one zooms in, bases on polygon area
   [zoom>=10][area>102400000],
@@ -325,7 +255,7 @@
     text-wrap-width: 180;
   }
 }
-
+*/
 /* ================================================================== */
 /* WATERWAY LABELS
 /* ================================================================== */
@@ -356,8 +286,8 @@
 /* ROAD LABELS
 /* ================================================================== */
 
-#motorway_label[type='motorway'][zoom>9],
-#motorway_label[type='trunk'][zoom>9] {
+#motorway_label[type='motorway'][zoom>14],
+#motorway_label[type='trunk'][zoom>14] {
   text-name:"[name]";
   text-face-name:@font_bold;
   text-placement:line;
@@ -371,9 +301,9 @@
   [zoom=13] { text-min-distance:100; }
 }
 
-#mainroad_label[type='primary'][zoom>12],
-#mainroad_label[type='secondary'][zoom>13],
-#mainroad_label[type='tertiary'][zoom>13] {
+#mainroad_label[type='primary'][zoom>14],
+#mainroad_label[type='secondary'][zoom>14],
+#mainroad_label[type='tertiary'][zoom>14] {
   text-name:'[name]';
   text-face-name:@font;
   text-placement:line;
@@ -384,7 +314,7 @@
   text-size:11;
 }
 
-#minorroad_label[zoom>14] {
+#minorroad_label[zoom>15] {
   text-name:'[name]';
   text-face-name:@font;
   text-placement:line;

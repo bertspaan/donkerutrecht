@@ -157,7 +157,7 @@ Map {
 /* ================================================================== */
 /* LIGHT POSTS
 /* ================================================================== */
-
+/*
 #lightposts {
   marker-fill: @light2;
   marker-allow-overlap:true;
@@ -175,7 +175,7 @@ Map {
     marker-width: 9px;
     image-filters: agg-stack-blur(18, 18);
   }
-}
+}*/
 
 /*#lightposts::middle {
   marker-fill: @road;
@@ -204,7 +204,7 @@ Map {
   ::blur {
     polygon-fill: @water;
 	polygon-pattern-file: url(wave.png);
-    polygon-geometry-transform: translate(0, 1);
+    polygon-geometry-transform: translate(0, 2);
   }
 }
 
@@ -271,10 +271,10 @@ Map {
 /* ADMINISTRATIVE BOUNDARIES
 /* ================================================================== */
 
-#admin[admin_level='2'][zoom>1] {
+/*#admin[admin_level='2'][zoom>1] {
   line-color:@admin_2;
   line-width:0.5;
   [zoom=2] { line-opacity: 0.25; }
   [zoom=3] { line-opacity: 0.3; }
   [zoom=4] { line-opacity: 0.4; }
-}
+}*/

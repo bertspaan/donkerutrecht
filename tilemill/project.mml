@@ -536,29 +536,6 @@
       "name": "building_lines"
     },
     {
-      "geometry": "point",
-      "extent": [
-        -178.39046487233182,
-        -52.117710019734275,
-        180,
-        85.051
-      ],
-      "id": "lightposts",
-      "class": "",
-      "Datasource": {
-        "file": "/Users/bert/code/donkerutrecht.nl/tilemill/layers/lightposts.geojson",
-        "layer": "OGRGeoJSON",
-        "id": "lightposts",
-        "project": "donker-utrecht",
-        "srs": ""
-      },
-      "layer": "OGRGeoJSON",
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "lightposts"
-    },
-    {
       "Datasource": {
         "dbname": "osm",
         "extent": "-90,0,90,180",
