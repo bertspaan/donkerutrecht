@@ -12,7 +12,7 @@
 
 /* ---- Cities ------------------------------------------------------ */
 
-#place::city[type='city'][zoom>=8][zoom<=15] {
+#place::city[type='city'][zoom>=8][zoom<=15][name!='Utrecht'] {
   text-name:'[name]';
   text-face-name:@font;
   text-placement:point;
