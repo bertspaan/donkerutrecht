@@ -69,6 +69,12 @@ Map {
 // Buildings zat onder Aeroway
 #building_lines::glow {
   [rand1 < 7][osm_id_mod10 > 2] {
+    [zoom=12] {
+      line-width: 0.55px;
+      line-opacity: 0.4;
+      line-color: darken(@light, 10%);
+      image-filters: agg-stack-blur(1, 1);
+    }
     [zoom=13] {
       line-width: 0.8px;
       line-opacity: 0.5;
